@@ -152,7 +152,7 @@ let old_len = 0;
 
 let SHEET_ID = '1cq_jA_NO--lf5cT3IDSvqQdKuqRs0gGzw4KzmfQXH90'
 let SHEET_TITLE = 'Form responses 1';
-let SHEET_RANGE = 'B2:D100'
+let SHEET_RANGE = 'B2:D1000'
 
 let FULL_URL = ('https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?sheet=' + SHEET_TITLE + '&range=' + SHEET_RANGE);
 
