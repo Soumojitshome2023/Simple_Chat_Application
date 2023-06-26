@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ononline="user_online()">
+
+    <section id="main_chat_screen">
+
+        <section id="chat_group_code_sender_name">
+            <div id="chat_group_code">
+                <p>Code :</p>
+                <span id="group_code_on_head"></span>
+
+            </div>
+            <div id="chat_sender_details">
+                <p>Your Name :</p>
+                <span id="sender_ph_on_head"></span>
+            </div>
+
+        </section>
+
+        <section id="chat_area">
+
+            <section id="inside_chat_area">
+                <!-- 
+                <div class="received_message">
+                    <p>hey</p>
+                </div> -->
+
+                <!-- <div class="send_message">
+                    <p>ok</p>
+                </div> -->
+
+            </section>
+            <span id="chat_bottom"></span>
+            <!-- <div class="scroll_btn_cntnr"> -->
+
+            <button id="chat_screen_scroll_bottom_btn" onclick="chat_bottom()">&darr;</button>
+            <!-- </div> -->
+
+
+        </section>
+
+
+        <section id="chat_input_area">
+
+
+            <form name="submit-to-google-sheet">
+
+                <input type="number" id="group_code" name="entry.1624153347" placeholder="Enter Connection Code">
+
+                <input type="text" id="sender_name" name="entry.1592666272" placeholder="Enter Your Name"
+                    onkeydown="return /[a-z]/i.test(event.key)" maxlength="10">
+
+                <textarea id="chat_entry" name="entry.1286616110" rows="4" cols="50" placeholder="Type Message"
+                    maxlength="100"></textarea>
+
+                <button id="submit-btn" onclick="message_send()" type="submit" value="Register" class="btn"
+                    disabled>Send</button>
+                <span id="wait_mess">Please Wait</span>
+            </form>
+
+
+
+
+        </section>
+        <div class="copy_right">
+            <p>Designed by Soumojit Shome</p>
+        </div>
+
+    </section>
+
+
+    <!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
+
+</body>
+<script src="script.js"></script>
+
+<script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool@latest'></script>
+
+</html>
