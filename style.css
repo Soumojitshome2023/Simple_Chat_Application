@@ -26,7 +26,8 @@ body {
     /* max-height: 90vh;
 
     max-height: none; */
-    min-height: 90vh;
+    /* min-height: 70vh; */
+    min-height: 300px;
     height: fit-content;
     border-radius: 30px;
     box-shadow: 0 0 20px 5px yellow;
@@ -490,7 +491,8 @@ form {
         margin: 10px 10px 30px 10px;
         border-radius: 10px;
         max-height: none;
-        min-height: 90vh;
+        /* min-height: 90vh; */
+        min-height: 300px;
         height: fit-content;
 
 
