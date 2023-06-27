@@ -25,6 +25,7 @@ window.addEventListener("load", () => {
 
 
     setTimeout(() => {
+        cntct_update();
         load();
 
     }, 1000);
@@ -32,6 +33,7 @@ window.addEventListener("load", () => {
 
 
     setTimeout(() => {
+
 
         setInterval(() => {
             msg_update();
@@ -61,6 +63,7 @@ document.querySelectorAll("input").forEach((ele, ind) => {
         document.getElementById("group_code_on_head").innerHTML = document.getElementById("group_code").value;
 
         load();
+        cntct_update();
 
     })
 
@@ -90,7 +93,15 @@ function btn_disable() {
 
     if (document.getElementById("sender_name").value.trim() != "" && document.getElementById("group_code").value.trim() != "" && document.getElementById("chat_entry").value.trim() != "") {
 
-        document.getElementById("submit-btn").disabled = false;
+        if ((document.getElementById("sender_name").value.trim() >= 'A' && document.getElementById("sender_name").value.trim() <= 'Z') || (document.getElementById("sender_name").value.trim() >= 'a' && document.getElementById("sender_name").value.trim() <= 'z')) {
+
+
+            document.getElementById("submit-btn").disabled = false;
+        }
+        else {
+            document.getElementById("submit-btn").disabled = true;
+
+        }
 
     }
     else {
@@ -204,7 +215,7 @@ function load() {
         })
 }
 
-
+// =================================Message Update=================================
 
 function msg_update() {
 
@@ -262,12 +273,6 @@ function chat_bottom() {
 }
 
 
-// ===============================Form Auto Save===================================
-
-// function alphaOnly(event) {
-//     var key = event.keyCode;
-//     return ((key >= 65 && key <= 90) || key == 8);
-// };
 
 // ===============================Form Auto Save===================================
 
@@ -302,6 +307,128 @@ function save(idv) {
 
 
 
-// ==============================================================================
+// ===================================Hamberger===========================================
 
 
+function contact_toggle() {
+
+
+    if (document.getElementById("contact_box").style.display == "none") {
+
+        // document.getElementById("hamberger")
+        document.getElementById("contact_box").style.display = "block";
+
+        document.getElementsByClassName("hamline")[0].style.display = "none";
+
+
+        document.getElementsByClassName("hamline")[1].style.transform = "rotate(55deg)";
+        document.getElementsByClassName("hamline")[1].style.margin = 0;
+        document.getElementsByClassName("hamline")[2].style.margin = 0;
+        document.getElementsByClassName("hamline")[2].style.transform = "rotate(-55deg)";
+
+    }
+    else {
+        document.getElementById("contact_box").style.display = "none";
+
+
+        document.getElementsByClassName("hamline")[0].style.display = "block";
+
+
+        document.getElementsByClassName("hamline")[1].style.transform = "";
+        document.getElementsByClassName("hamline")[1].style.margin = "";
+        document.getElementsByClassName("hamline")[2].style.margin = "";
+        document.getElementsByClassName("hamline")[2].style.transform = "";
+
+
+    }
+
+
+
+}
+
+function contact_close() {
+    document.getElementById("contact_box").style.display = "none";
+
+    document.getElementsByClassName("hamline")[0].style.display = "block";
+
+
+    document.getElementsByClassName("hamline")[1].style.transform = "";
+    document.getElementsByClassName("hamline")[1].style.margin = "";
+    document.getElementsByClassName("hamline")[2].style.margin = "";
+    document.getElementsByClassName("hamline")[2].style.transform = "";
+}
+
+
+// ===============================User Wish===============================
+
+function user_wish(code) {
+
+    document.getElementById("group_code").value = code;
+    document.getElementById("group_code_on_head").innerHTML = code;
+    localStorage.setItem("group_code", code);
+    console.log("user wish run");
+
+    setTimeout(() => {
+        location.reload();
+
+    }, 500);
+    contact_close();
+
+}
+
+// ===============================Contact Update===============================
+
+
+function cntct_update() {
+
+    fetch(FULL_URL)
+        .then(res => res.text())
+        .then(rep => {
+            let data3 = JSON.parse(rep.substr(47).slice(0, -2));
+
+
+            let length3 = data3.table.rows.length;
+
+
+
+            document.getElementById("contact_box").innerHTML = "";
+
+            let s = 1;
+            for (let k = 0; k < length3; k++) {
+                let flag = 1;
+
+
+                for (let m = 0; m < k; m++) {
+
+                    if (k == m) {
+                        flag = 1;
+
+                    }
+                    else if ((data3.table.rows[k].c[1].v == data3.table.rows[m].c[1].v) && (data3.table.rows[k].c[0].v == data3.table.rows[m].c[0].v)) {
+                        flag = 0;
+                        // console.log(data3.table.rows[k].c[1].v);
+                        break;
+
+                    }
+
+                }
+
+                if (flag == 1) {
+                    if (data3.table.rows[k].c[0].v == sndr_name) {
+
+                        let tmp4 = `<div class="contact"><p>${s + ") " + data3.table.rows[k].c[1].v}</p><button class="contact_btn" onclick="user_wish(${data3.table.rows[k].c[1].v})">Send Message</button></div>`;
+                        s++;
+                        document.getElementById("contact_box").innerHTML += tmp4;
+
+                    }
+
+                }
+
+            }
+
+        })
+
+}
+
+
+// =======================================================================================
