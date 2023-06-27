@@ -19,13 +19,25 @@
 
             </div>
             <div id="chat_sender_details">
-                <p>Your Name :</p>
+                <p>Name :</p>
                 <span id="sender_ph_on_head"></span>
+            </div>
+            <div id="hamberger" onclick="contact_toggle()">
+                <span class="hamline"></span>
+                <span class="hamline"></span>
+                <span class="hamline"></span>
             </div>
 
         </section>
+        <section id="contacts">
+            <div id="contact_box">
 
-        <section id="chat_area">
+                <!-- <div class="contact"><p>Baban</p><button class="contact_btn" onclick="user_wish(600)">Send Message</button></div> -->
+
+            </div>
+        </section>
+
+        <section id="chat_area" onclick="contact_close()">
 
             <section id="inside_chat_area">
                 <!-- 
@@ -53,13 +65,14 @@
 
             <form name="submit-to-google-sheet">
 
-                <input type="number" id="group_code" name="entry.1624153347" placeholder="Enter Connection Code">
+                <input type="number" id="group_code" name="entry.1624153347" placeholder="Enter Code"
+                    title="Enter Connection Code">
 
                 <input type="text" id="sender_name" name="entry.1592666272" placeholder="Enter Your Name"
-                    onkeydown="return /[a-z]/i.test(event.key)" maxlength="10">
+                    onkeydown="return /[a-z]/i.test(event.key)" maxlength="10" title="Enter Your Name">
 
                 <textarea id="chat_entry" name="entry.1286616110" rows="4" cols="50" placeholder="Type Message"
-                    maxlength="100"></textarea>
+                    maxlength="100" title="Type message here"></textarea>
 
                 <button id="submit-btn" onclick="message_send()" type="submit" value="Register" class="btn"
                     disabled>Send</button>
