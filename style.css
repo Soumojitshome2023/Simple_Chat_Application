@@ -19,7 +19,7 @@ body {
 }
 
 #main_chat_screen {
-    border: 5px solid rgb(0, 17, 255);
+    /* border: 5px solid rgb(0, 17, 255); */
     max-width: 60vw;
     width: fit-content;
     /* min-height: 80vh; */
@@ -146,8 +146,8 @@ body {
 }
 
 #contact_box {
+    /* border: 2px solid rgb(145, 0, 0); */
     display: none;
-    border: 2px solid rgb(145, 0, 0);
     min-height: 100px;
     max-height: 300px;
     overflow: scroll;
@@ -330,7 +330,7 @@ body {
 
 /* =================================Last================================= */
 #chat_input_area {
-    border: 5px solid rgb(168, 2, 2);
+    /* border: 5px solid rgb(168, 2, 2); */
     min-height: 10vh;
     height: fit-content;
     display: flex;
@@ -439,7 +439,7 @@ form {
 
 
 .copy_right {
-    border: 5px solid green;
+    /* border: 5px solid green; */
     text-align: center;
     font-size: 20px;
     margin: 5px;
