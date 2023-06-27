@@ -6,7 +6,8 @@
 body {
     /* border: 5px solid red; */
     /* background-image: linear-gradient(#23074d, #cc5333); */
-    background-image: linear-gradient(#000000, #232425);
+    /* background-image: linear-gradient(#000000, #232425); */
+    background-image: linear-gradient(#bdc3c7, #2c3e50);
     width: 100vw;
     min-height: 100vh;
     height: fit-content;
@@ -18,7 +19,7 @@ body {
 }
 
 #main_chat_screen {
-    /* border: 5px solid rgb(0, 17, 255); */
+    border: 5px solid rgb(0, 17, 255);
     max-width: 60vw;
     width: fit-content;
     /* min-height: 80vh; */
@@ -52,9 +53,9 @@ body {
 
     /* border: 5px solid rgb(38, 0, 255); */
     border-radius: 10px;
-    background-image: linear-gradient(90deg, #333333, #5f0000);
+    background-image: linear-gradient(90deg, #333333, #c05b5b);
     box-shadow: 0 0 6px 1px rgb(251, 255, 0);
-    min-width: 23vw;
+    min-width: 10vw;
     width: fit-content;
     max-width: 50vw;
     overflow: hidden;
@@ -72,10 +73,10 @@ body {
 
     /* border: 5px solid rgb(2, 168, 16); */
     border-radius: 10px;
-    background-image: linear-gradient(90deg, #333333, #5f0000);
+    background-image: linear-gradient(90deg, #333333, #c05b5b);
     box-shadow: 0 0 6px 1px rgb(251, 255, 0);
-    background-color: rgba(87, 87, 87, 0.384);
-    min-width: 23vw;
+    background-color: rgba(78, 78, 78, 0.616);
+    min-width: 10vw;
     width: fit-content;
     max-width: 50vw;
     overflow: hidden;
@@ -101,6 +102,115 @@ body {
     color: #ffffff;
 }
 
+#hamberger {
+    /* border: 5px solid green; */
+    width: 80px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+
+}
+
+#hamberger:hover {
+    cursor: pointer;
+}
+
+.hamline {
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 50px;
+    background-color: white;
+    /* border-top: 1px; */
+    height: 3px;
+    width: 50px;
+    margin: 5px;
+
+    transition: all 0.9s;
+}
+
+
+
+#contacts {
+    /* display: none; */
+    position: relative;
+    top: 8px;
+    /* border: 1px solid rgb(255, 255, 255); */
+    /* background-color: white; */
+    /* border-top: 1px; */
+    height: 1px;
+    /* width: 60px; */
+    /* margin: 5px; */
+
+}
+
+#contact_box {
+    display: none;
+    border: 2px solid rgb(145, 0, 0);
+    min-height: 100px;
+    max-height: 300px;
+    overflow: scroll;
+    height: fit-content;
+    background-color: rgba(39, 39, 39, 0.753);
+    /* width: 60px; */
+}
+
+.contact {
+    /* border: 3px solid rgb(255, 255, 255); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact p {
+    color: white;
+    margin: 10px;
+    font-size: 20px;
+    /* margin-left: 50px; */
+    height: 30px;
+    border: 3px solid rgb(255, 255, 255);
+    padding: 5px;
+    min-width: 80px;
+    width: fit-content;
+    background-image: linear-gradient(90deg, #333333, #dd1818);
+    box-shadow: 0 0 6px 1px rgb(255, 255, 255);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.contact_btn {
+    margin: 10px;
+    height: 30px;
+    min-width: 100px;
+    width: fit-content;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    /* border-radius: 30px; */
+    font-size: 15px;
+
+
+    background-image: linear-gradient(90deg, #333333, #dd1818);
+    box-shadow: 0 0 6px 1px rgb(251, 255, 0);
+    color: white;
+    border: 3px solid rgb(255, 255, 255);
+}
+
+
+.contact_btn:hover {
+    cursor: pointer;
+    background-image: linear-gradient(90deg, #333333, #dd1818);
+    box-shadow: 0 0 6px 1px rgb(255, 255, 255);
+}
+
+
 
 /* =================================Middle================================= */
 #chat_area {
@@ -121,7 +231,7 @@ body {
 
 #inside_chat_area {
     /* border: 5px solid rgb(168, 2, 2); */
-    min-height: 50vh;
+    min-height: 45vh;
     height: fit-content;
 
 
@@ -220,7 +330,7 @@ body {
 
 /* =================================Last================================= */
 #chat_input_area {
-    /* border: 5px solid rgb(168, 2, 2); */
+    border: 5px solid rgb(168, 2, 2);
     min-height: 10vh;
     height: fit-content;
     display: flex;
@@ -328,6 +438,14 @@ form {
 }
 
 
+.copy_right {
+    border: 5px solid green;
+    text-align: center;
+    font-size: 20px;
+    margin: 5px;
+    color: white;
+    font-weight: 900;
+}
 
 
 
@@ -361,14 +479,6 @@ form {
 }
 
 
-.copy_right{
-    /* border: 5px solid green; */
-    text-align: center;;
-    font-size: 20px;
-    margin: 10px;
-    color: white;
-    font-weight: 900;
-}
 
 /* ========================================================================= */
 
@@ -380,7 +490,7 @@ form {
         margin: 10px 10px 30px 10px;
         border-radius: 10px;
         max-height: none;
-        min-height: 98vh;
+        min-height: 90vh;
         height: fit-content;
 
 
@@ -393,8 +503,8 @@ form {
     }
 
     #chat_area {
-        max-height: 60vh;
-        min-height: 300px;
+        max-height: 45vh;
+        min-height: 150px;
         /* height: fit-content; */
     }
 
@@ -460,13 +570,13 @@ form {
     #sender_name,
     #group_code {
         height: 25px;
-        width: 40vw;
-        font-size: 10px;
+        width: 35vw;
+        font-size: 13px;
         padding: 2px 5px;
     }
 
     #chat_entry {
-        height: 40px;
+        height: 60px;
         margin: 5px;
         margin-top: 10px;
         padding: 2px;
@@ -488,6 +598,43 @@ form {
         width: 70vw;
         font-size: 20px;
     }
+
+    #hamberger {
+
+        width: 25px;
+        height: 30px;
+    }
+
+    .hamline {
+        height: 3px;
+        width: 30px;
+        margin: 3px;
+    }
+
+    #contact_box {
+        min-height: 150px;
+        max-height: 200px;
+        overflow: scroll;
+        height: fit-content;
+    }
+
+    .contact p {
+
+        font-size: 15px;
+        height: 20px;
+        padding: 3px;
+        min-width: 50px;
+    }
+
+    .contact_btn {
+        font-size: 15px;
+        height: 20px;
+        padding: 15px;
+        min-width: 50px;
+    }
+
+
+
 
 
 }
